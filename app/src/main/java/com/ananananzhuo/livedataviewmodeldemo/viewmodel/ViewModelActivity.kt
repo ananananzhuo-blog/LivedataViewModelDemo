@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.ananananzhuo.livedataviewmodeldemo.R
+import com.ananananzhuo.livedataviewmodeldemo.logEE
 import kotlinx.android.synthetic.main.activity_view_model.*
 
 class ViewModelActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class ViewModelActivity : AppCompatActivity() {
             val model =
                 ViewModelProvider.NewInstanceFactory().create(SimpleFactoryViewModel::class.java)
             model.print()
+
         }
         btn_create_withandroidfactory.setOnClickListener {
             val model = ViewModelProvider.AndroidViewModelFactory.getInstance(application)
@@ -34,6 +36,7 @@ class ViewModelActivity : AppCompatActivity() {
                 CustomSimpleViewModelFactory(application, "自定义简单工厂创建viewmodel")
             ).get(CustomSimpleViewModel::class.java)
             model.print()
+            logEE("model对象打印 ${model.toString()}")
         }
         btn_create_withandroidfactory_custom.setOnClickListener {
             val model = ViewModelProvider(
@@ -41,7 +44,9 @@ class ViewModelActivity : AppCompatActivity() {
                 CustomAndroidViewModelFactory(application, "自定义安卓工厂创建viewmodel")
             ).get(CustomAndroidViewModel::class.java)
             model.print()
+            logEE("model对象打印 ${model.toString()}")
         }
+
         btn_viewmodel_clear.setOnClickListener {
             startActivity(Intent(this, RotationActivity::class.java))
         }
@@ -49,7 +54,5 @@ class ViewModelActivity : AppCompatActivity() {
         btn_create_with_entrustviewmodel.setOnClickListener {
             wtModel.print()
         }
-
-
     }
 }

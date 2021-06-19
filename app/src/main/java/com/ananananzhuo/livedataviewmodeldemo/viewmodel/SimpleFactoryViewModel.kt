@@ -12,4 +12,9 @@ class SimpleFactoryViewModel: ViewModel() {
     fun print(){
         logEE("使用简单工厂创建viewmodel")
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        logEE("SimpleFactoryViewModel数据被清理")
+    }
 }
