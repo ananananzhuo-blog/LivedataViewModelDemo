@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LivedataViewModelDemo">
-        <activity android:name=".viewmodelsharedatawithfragment.ViewModelShareDataActivity"></activity>
+        <activity android:name=".SameViewModelActivity"></activity>
+        <activity android:name=".viewmodelsharedatawithfragment.ViewModelShareDataActivity" />
         <activity android:name=".viewmodel.RotationActivity" />
         <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".viewmodel.ViewModelActivity" />

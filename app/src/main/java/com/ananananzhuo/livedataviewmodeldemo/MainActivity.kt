@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_fragment_sharedata.setOnClickListener {
-            startActivity(Intent(this,ViewModelShareDataActivity::class.java))
+            startActivity(Intent(this, ViewModelShareDataActivity::class.java))
+        }
+        btn_tosame_activity.setOnClickListener {
+            startActivity(Intent(this, SameViewModelActivity::class.java))
         }
     }
 }
